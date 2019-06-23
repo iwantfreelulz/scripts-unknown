@@ -4,5 +4,92 @@
 	<title>welcome to scripts unknown</title>
 	</head>
 	<p>list of stuff</p>
+	<div id="wiCheckoutPaymentCreditCardInfo" style="display: none">
+			<div class="d-flex mt-2">
+					<img alt="Amex" src="/glassnickel/Images/amex.gif" />
+									<img alt="Visa" src="/glassnickel/Images/visa.gif" />
+									<img alt="Mastercard" src="/glassnickel/Images/mastercard.gif" />
+									<img alt="Discover" src="/glassnickel/Images/discover.gif" />
+			</div>
+
+
+				<div class="form-group row">
+					<label for="Payment_CCNumber" class="col-4 col-form-label">
+						Card Number:
+					</label>
+					<div class="col-8">
+						<input autocomplete="off" class="form-control" id="Payment_CCNumber" name="Payment_CCNumber" required="required" type="text" value="" />
+						<div class="invalid-feedback">
+							<span class="field-validation-valid" data-valmsg-for="Payment_CCNumber" data-valmsg-replace="true"></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Payment_ExpMonth" class="col-4 col-form-label">
+						Exp. Date:
+					</label>
+					<div class="col-8">
+						<div class="d-flex">
+							<select class="form-control custom-select" data-val="true" data-val-number="The field Payment_ExpMonth must be a number." data-val-required="The Payment_ExpMonth field is required." id="Payment_ExpMonth" name="Payment_ExpMonth"><option selected="selected" value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+							<select class="form-control custom-select" data-val="true" data-val-number="The field Payment_ExpYear must be a number." data-val-required="The Payment_ExpYear field is required." id="Payment_ExpYear" name="Payment_ExpYear"><option selected="selected" value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028</option>
+</select>
+						</div>
+						<div class="invalid-feedback">
+							<span class="field-validation-valid" data-valmsg-for="Payment_ExpMonth" data-valmsg-replace="true"></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Payment_CVV" class="col-4 col-form-label">
+						Security Code:
+					</label>
+					<div class="col-8">
+						<input autocomplete="off" class="form-control" id="Payment_CVV" name="Payment_CVV" required="required" type="text" value="" />
+						<a class="wcCheckoutCVVInfo" href="#">What&#39;s this</a>
+						<div class="invalid-feedback">
+							<span class="field-validation-valid" data-valmsg-for="Payment_CVV" data-valmsg-replace="true"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group row">
+						<label for="Payment_AVSZip" class="col-4 col-form-label">
+							Billing Zip Code:
+						</label>
+						<div class="col-8">
+							<input autocomplete="off" class="form-control" id="Payment_AVSZip" name="Payment_AVSZip" required="required" type="text" value="" />
+							<div class="invalid-feedback">
+								<span class="field-validation-valid" data-valmsg-for="Payment_AVSZip" data-valmsg-replace="true"></span>
+							</div>
+						</div>
+					</div>
+					</div>
+		<div id="wiCheckoutPaymentPayLaterInfo" style="display: none">
+					</div>
+
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
