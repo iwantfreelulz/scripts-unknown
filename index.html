@@ -1,16 +1,942 @@
-<html>
-	<head>
-		<title>
-			Cringe
-		</title>
-	</head>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+		<title>CHECKOUT - Weborder</title>
+
+		<meta name="description" content="Order food online" />
+	<link href="https://weborder3.microworks.com/glassnickel/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	
+<link rel="stylesheet" href="https://weborder3.microworks.com/glassnickel/custom/bootstrap.css" />
+
+<link rel="stylesheet" href="https://weborder3.microworks.com/glassnickel/Content/bootstrap-datepicker.css" />
+
+	<link rel="stylesheet" href="https://weborder3.microworks.com/glassnickel/custom/CustomSite_vars.css" />
+<link href="/glassnickel/Content/css-5.0.141.1287?v=Ur_-G7MmcQIqfLKTjsbo0zceeiux27j5i0GtxFqlh5c1" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://weborder3.microworks.com/glassnickel/custom/Specials.css" />
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/glassnickel/Scripts/umd/popper.min.js"></script>
+<script src="/glassnickel/Scripts/bootstrap.min.js"></script>
+<script src="/glassnickel/Scripts/bootstrap-datepicker.min.js"></script>
+<script src="/glassnickel/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="/glassnickel/Scripts/jquery.blockUI.js"></script>
+
+
+<script type="text/javascript">
 		
-</body>
-	<form>
-  First name:<br>
-  <input type="text" name="firstname"><br>
-  Last name:<br>
-  <input type="text" name="lastname">
+		if (top.location != self.location) {
+			top.location = self.location.href;
+		}
+		
+
+	function WeborderRoot(pValue) {
+		return pValue.replace("~/", '/glassnickel/');
+	}
+
+	var GLOBAL__SESSION_TIMEOUT_WARNING_CAPTION="Stay logged in?";
+var GLOBAL__SESSION_TIMEOUT_WARNING_MESSAGE="Your Weborder session will expire in <b><span id='timeout'></span></b> seconds.<br/>Would you like to stay signed in?";
+var GENERAL__CULTURE="en-US";
+
+
+	var CULTURE_CODE = GENERAL__CULTURE.split("-")[1];
+</script>
+
+	<link href="/glassnickel/custom/CustomSite.css" type="text/css" rel="stylesheet" />
+		<link href="/glassnickel/custom/site_overrides.css" type="text/css" rel="stylesheet" />
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+	
+
+	
+
+
+
+		<div class="container navBarContainer">
+			<div class="row">
+				<div class="col-12 navbarRow">
+					<header class="navbar">
+						<div class="navBarLogo">
+								<a>
+									<img alt="Organization Logo" src="/glassnickel/custom/glass-nickel-logo.png" />
+								</a>
+						</div>
+
+						<div class="navBarRight ">
+							<div class="d-flex flex-column h-100">
+
+									<div class="navbar-text navBarSignedIn d-none d-lg-block mr-2 mt-auto">
+										<svg width="20" height="20" class="user">
+											<use xlink:href="/glassnickel/Images/svg/Icons.svg#user" />
+										</svg>
+										jarett lang
+									</div>
+
+								<div class="d-flex mt-auto align-items-baseline">
+										<div id="cartIconAndLink" class="flex-grow-1 text-right">
+											<a class="nav-item nav-link px-0" href="/glassnickel/Cart/">
+												<div class="d-inline-flex align-items-center">
+													<div>
+														<svg width="40" height="40" class="cart">
+															<use xlink:href="/glassnickel/Images/svg/Icons.svg#cart" />
+															<text x="22" y="18" text-anchor="middle">2</text>
+														</svg>
+													</div>
+
+													<div class="ml-2 cartTotal">
+														$14.45
+													</div>
+												</div>
+											</a>
+										</div>
+
+										<button class="pr-1 pl-1 pb-1 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-label="Menu Toggler" role="navigation">
+											<svg width="30" height="30">
+												<use xlink:href="/glassnickel/Images/svg/Icons.svg#toggler" />
+											</svg>
+										</button>
+								</div>
+							</div>
+
+								<div class="collapse navbar-collapse flex-shrink-1 flex-grow-0" id="navbarMenu">
+									<div id="navBarWrapper" class="ml-auto">
+
+
+
+											<div class="navbar-text navBarSignedIn d-block d-lg-none">
+												<div class="d-flex align-items-center">
+													<svg width="20" height="20" class="user">
+														<use xlink:href="/glassnickel/Images/svg/Icons.svg#user" />
+													</svg>
+													<span>
+														jarett lang
+													</span>
+												</div>
+											</div>
+
+											<hr class="my-0 mx-0" />
+
+
+										<div id="navbarMenuItems" class="navbar-nav ml-auto ">
+											<a class="nav-item nav-link" href="/glassnickel/Ordering">
+												<div class="d-flex align-items-center">
+													<svg width="20" height="20">
+														<use xlink:href="/glassnickel/Images/svg/Icons.svg#burger" />
+													</svg>
+													<span>
+														MENU
+													</span>
+												</div>
+											</a>
+
+												<a class="nav-item nav-link" href="/glassnickel/Cart/">
+													<div class="d-flex align-items-center">
+														<svg width="20" height="20">
+															<use xlink:href="/glassnickel/Images/svg/Icons.svg#plate" />
+														</svg>
+														<span>
+															MY ORDER
+														</span>
+													</div>
+												</a>
+													<a class="nav-item nav-link" href="/glassnickel/GetAddress?ReturnURL=~/Ordering/">
+														<div class="d-flex align-items-center">
+															<svg width="20" height="20">
+																<use xlink:href="/glassnickel/Images/svg/Icons.svg#details" />
+															</svg>
+															<span>
+																ORDER DETAILS
+															</span>
+														</div>
+													</a>
+													<a class="nav-item nav-link" href="/glassnickel/MyAccount/">
+														<div class="d-flex align-items-center">
+															<svg width="20" height="20">
+																<use xlink:href="/glassnickel/Images/svg/Icons.svg#house" />
+															</svg>
+															<span>
+																MY ACCOUNT
+															</span>
+														</div>
+													</a>
+														<a class="nav-item nav-link" href="/glassnickel/PickStore/?AddressID=385990">
+															<div class="d-flex align-items-center">
+																<svg width="20" height="20">
+																	<use xlink:href="/glassnickel/Images/svg/Icons.svg#location" />
+																</svg>
+																<span>
+																	EAST
+																</span>
+															</div>
+														</a>
+													<a class="nav-item nav-link" href="/glassnickel/Login/Logoff">
+														<div class="d-flex align-items-center">
+															<svg width="20" height="20">
+																<use xlink:href="/glassnickel/Images/svg/Icons.svg#xuser" />
+															</svg>
+															<span>
+																SIGN OUT
+															</span>
+														</div>
+													</a>
+
+
+										</div>
+
+
+
+										
+									</div>
+								</div>
+						</div>
+
+					</header>
+
+
+				</div>
+			</div>
+		</div>
+		<div class="container mainContainer">
+			<div class="row">
+
+				<div id="mainColumn" class="col col-lg pb-4 flex-grow-1">
+					<div class="mb-2">
+							<h1 class="topBannerHeader">CHECKOUT</h1>
+								<h2 class="topBannerSubHeader bg-dark text-light">
+									EAST - 10:30am - 12:30am
+								</h2>
+					</div>
+					
+
+<form action="/glassnickel/Checkout/Checkout" data-ajax="true" data-ajax-failure="OnCheckoutAjaxFailure" data-ajax-method="POST" data-ajax-success="OnCheckoutAjaxSuccess" id="wiCheckoutForm" method="post">		<div id="checkoutAccordion" class="accordion mt-2">
+		<div id="wiCheckoutPartialOrderSummary">
+				<div class="card">
+		<div class="card-header px-0 py-1">
+			<h5 class="mb-0">
+				<button class="btn btn-block btn-link text-left accordionButton collapsed" type="button" data-toggle="collapse" data-target="#checkoutOrderSummary">
+					<div class="d-flex align-items-center">
+						<svg width="16" height="16" class="accordionClosed">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-right" />
+						</svg>
+						<svg width="16" height="16" class="accordionOpen">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-down" />
+						</svg>
+						<span>
+							Order Summary
+						</span>
+					</div>
+				</button>
+			</h5>
+		</div>
+
+		<div id="checkoutOrderSummary" class="collapse">
+			<div class="card-body">
+				<div id="wiCheckoutGuestCheck">
+					
+<div>
+			<div class="cartRow " data-item-index="1">
+			<div class="cartQty">
+1			</div>
+
+			<div class="cartTicketName">
+CHEESE BREAD
+			</div>
+
+			<div class="cartPrice">
+				$5.95
+			</div>
+		</div>
+		<div class="cartRow " data-item-index="2">
+			<div class="cartQty">
+1			</div>
+
+			<div class="cartTicketName">
+CHEESE CURDS
+			</div>
+
+			<div class="cartPrice">
+				$6.50
+			</div>
+		</div>
+
+
+		<div class="cartRow">
+			<div>
+				Delivery Charge:
+			</div>
+			<div>
+				$1.25
+			</div>
+		</div>
+
+		<div class="cartRow">
+			<div>
+				Sub Total:
+			</div>
+			<div>
+				$13.70
+			</div>
+		</div>
+
+
+		<div class="cartRow">
+			<div>
+				Tax:
+			</div>
+			<div>
+				$0.75
+			</div>
+		</div>
+
+	<div class="cartRow">
+		<div>
+			Total:
+		</div>
+		<div>
+			$14.45
+		</div>
+	</div>
+
+
+
+
+</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+ 
+		</div>
+		<div id="wiCheckoutPartialStoreInfo">
+			
+	<div class="card">
+		<div class="card-header px-0 py-1">
+			<h5 class="mb-0">
+				<button class="btn btn-block btn-link text-left accordionButton" type="button" data-toggle="collapse" data-target="#checkoutStoreInfo">
+					<div class="d-flex align-items-center">
+						<svg width="16" height="16" class="accordionClosed">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-right" />
+						</svg>
+						<svg width="16" height="16" class="accordionOpen">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-down" />
+						</svg>
+						<span>
+							Store Info
+						</span>
+					</div>
+				</button>
+			</h5>
+		</div>
+
+		<div id="checkoutStoreInfo" class="collapse show">
+			<div class="card-body">
+				East<br/>2916 Atwood Ave.<br/>Madison, WI 53704<br/>(608)245-0880  
+			</div>
+		</div>
+	</div>
+
+		</div>
+		<div id="wiCheckoutPartialServiceType">
+				<div class="card">
+		<div class="card-header px-0 py-1">
+			<h5 class="mb-0">
+				<button class="btn btn-block btn-link text-left accordionButton" type="button" data-toggle="collapse" data-target="#checkoutServiceType">
+					<div class="d-flex align-items-center">
+						<svg width="16" height="16" class="accordionClosed">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-right" />
+						</svg>
+						<svg width="16" height="16" class="accordionOpen">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-down" />
+						</svg>
+						<span>
+							Service Method
+						</span>
+					</div>
+				</button>
+			</h5>
+		</div>
+
+		<div id="checkoutServiceType" class="collapse show">
+			<div class="card-body">
+				<div class="text-center">
+	<div class="btn-group btn-group-toggle w-60" data-toggle="buttons">
+			<label for="wiCheckoutServiceTypeWBD" class="col btn btn-outline-primary active">
+				<input checked="checked" class="wcCheckoutServiceType" data-requires-address="True" id="wiCheckoutServiceTypeWBD" name="ServiceType_Type" type="radio" value="WBD" />
+				Delivery
+			</label>
+			<label for="wiCheckoutServiceTypeWBP" class="col btn btn-outline-primary ">
+				<input class="wcCheckoutServiceType" data-requires-address="False" id="wiCheckoutServiceTypeWBP" name="ServiceType_Type" type="radio" value="WBP" />
+				Pickup
+			</label>
+	</div>
+</div>
+
+<div id="wiCheckoutAddresses" class="mt-3">
+	<select aria-label="Address" class="form-control custom-select" data-val="true" data-val-number="The field ServiceType_Address must be a number." data-val-required="The ServiceType_Address field is required." id="ServiceType_Address" name="ServiceType_Address"><option selected="selected" value="385990">Home</option>
+<option value="0">Add New Address</option>
+</select>
+	<div id="wiCheckoutAddressPreview" class="mt-2">
+		<div id="wiCheckoutAddress" class="text-center">
+	333 INGERSOLL ST S<br/>Madison, WI 53703
+
+</div>
+
+
+
+	<div class="mt-1">
+		
+		<textarea aria-label="Delivery Instructions" class="form-control" cols="20" id="ServiceType_DeliveryInstructions" name="ServiceType_DeliveryInstructions" placeholder="Delivery Instructions" rows="2">
+</textarea>
+	</div>
+
+
+
+
+	</div>
+</div>
+
+<div class="invalid-feedback d-block">
+	<span class="field-validation-valid" data-valmsg-for="ServiceType_Type" data-valmsg-replace="true"></span>
+</div>
+
+
+			</div>
+		</div>
+	</div>
+
+		</div>
+		<div id="wiCheckoutPartialServiceTime">
+				<div class="card">
+		<div class="card-header px-0 py-1">
+			<h5 class="mb-0">
+				<button class="btn btn-block btn-link text-left accordionButton" type="button" data-toggle="collapse" data-target="#checkoutServiceTime">
+					<div class="d-flex align-items-center">
+						<svg width="16" height="16" class="accordionClosed">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-right" />
+						</svg>
+						<svg width="16" height="16" class="accordionOpen">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-down" />
+						</svg>
+						<span>
+							Delivery Time
+						</span>
+					</div>
+				</button>
+			</h5>
+		</div>
+
+		<div id="checkoutServiceTime" class="collapse show">
+			<div class="card-body">
+				<div class="text-center">
+	<div class="btn-group btn-group-toggle w-60" data-toggle="buttons">
+			<label for="wiCheckoutServiceTimeNow" class="col btn btn-outline-primary active">
+				<input checked="checked" class="wcCheckoutServiceTime" data-val="true" data-val-required="The ServiceTime_Later field is required." id="wiCheckoutServiceTimeNow" name="ServiceTime_Later" type="radio" value="False" />
+				Now
+			</label>
+
+			<label for="wiCheckoutServiceTimeLater" class="col btn btn-outline-primary ">
+				<input class="wcCheckoutServiceTime" id="wiCheckoutServiceTimeLater" name="ServiceTime_Later" type="radio" value="True" />
+				Later
+			</label>
+	</div>
+</div>
+
+	<div id="wiCheckoutSpecificTime" class="mt-2 row">
+		<div class="col-8 pr-1">
+			<select class="form-control custom-select" id="ServiceTime_Day" name="ServiceTime_Day"><option selected="selected" value="2019-06-23">Today - 6/23/2019</option>
+<option value="2019-06-24">Tomorrow - 6/24/2019</option>
+<option value="2019-06-25">Tuesday - 6/25/2019</option>
+<option value="2019-06-26">Wednesday - 6/26/2019</option>
+<option value="2019-06-27">Thursday - 6/27/2019</option>
+<option value="2019-06-28">Friday - 6/28/2019</option>
+<option value="2019-06-29">Saturday - 6/29/2019</option>
+<option value="2019-06-30">Sunday - 6/30/2019</option>
+<option value="2019-07-01">Monday - 7/1/2019</option>
+<option value="2019-07-02">Tuesday - 7/2/2019</option>
+<option value="2019-07-03">Wednesday - 7/3/2019</option>
+<option value="2019-07-04">Thursday - 7/4/2019</option>
+<option value="2019-07-05">Friday - 7/5/2019</option>
+<option value="2019-07-06">Saturday - 7/6/2019</option>
+<option value="2019-07-07">Sunday - 7/7/2019</option>
+<option value="2019-07-08">Monday - 7/8/2019</option>
+<option value="2019-07-09">Tuesday - 7/9/2019</option>
+<option value="2019-07-10">Wednesday - 7/10/2019</option>
+<option value="2019-07-11">Thursday - 7/11/2019</option>
+<option value="2019-07-12">Friday - 7/12/2019</option>
+<option value="2019-07-13">Saturday - 7/13/2019</option>
+<option value="2019-07-14">Sunday - 7/14/2019</option>
+<option value="2019-07-15">Monday - 7/15/2019</option>
+<option value="2019-07-16">Tuesday - 7/16/2019</option>
+<option value="2019-07-17">Wednesday - 7/17/2019</option>
+<option value="2019-07-18">Thursday - 7/18/2019</option>
+<option value="2019-07-19">Friday - 7/19/2019</option>
+<option value="2019-07-20">Saturday - 7/20/2019</option>
+<option value="2019-07-21">Sunday - 7/21/2019</option>
+<option value="2019-07-22">Monday - 7/22/2019</option>
+<option value="2019-07-23">Tuesday - 7/23/2019</option>
+</select>
+		</div>
+		<div class="col-4 pl-1">
+			<select class="form-control custom-select" data-val="true" data-val-number="The field ServiceTime_Time must be a number." data-val-required="The ServiceTime_Time field is required." id="ServiceTime_Time" name="ServiceTime_Time"><option value="1020">5:00 PM</option>
+<option value="1035">5:15 PM</option>
+<option value="1050">5:30 PM</option>
+<option value="1065">5:45 PM</option>
+<option value="1080">6:00 PM</option>
+<option value="1095">6:15 PM</option>
+<option value="1110">6:30 PM</option>
+<option value="1125">6:45 PM</option>
+<option value="1140">7:00 PM</option>
+<option value="1155">7:15 PM</option>
+<option value="1170">7:30 PM</option>
+<option value="1185">7:45 PM</option>
+<option value="1200">8:00 PM</option>
+<option value="1215">8:15 PM</option>
+<option value="1230">8:30 PM</option>
+<option value="1245">8:45 PM</option>
+<option value="1260">9:00 PM</option>
+<option value="1275">9:15 PM</option>
+<option value="1290">9:30 PM</option>
+<option value="1305">9:45 PM</option>
+<option value="1320">10:00 PM</option>
+<option value="1335">10:15 PM</option>
+<option value="1350">10:30 PM</option>
+<option value="1365">10:45 PM</option>
+<option value="1380">11:00 PM</option>
+<option value="1395">11:15 PM</option>
+<option value="1410">11:30 PM</option>
+<option value="1425">11:45 PM</option>
+<option value="1440">12:00 AM</option>
+</select>
+		</div>
+	</div>
+
+
+			</div>
+		</div>
+	</div>
+
+		</div>
+		<div id="wiCheckoutPartialLoyaltyPoints">
+			
+		</div>
+		<div id="wiCheckoutPartialRedeemLoyaltyPoints">
+			
+		</div>
+		<div id="wiCheckoutPartialCoupons">
+						<div class="card">
+				<div class="card-header px-0 py-1">
+					<h5 class="mb-0">
+						<button class="btn btn-block btn-link text-left accordionButton collapsed" type="button" data-toggle="collapse" data-target="#checkoutCoupons">
+							<div class="d-flex align-items-center">
+								<svg width="16" height="16" class="accordionClosed">
+									<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-right" />
+								</svg>
+								<svg width="16" height="16" class="accordionOpen">
+									<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-down" />
+								</svg>
+								<span>
+									Coupon(s)
+								</span>
+							</div>
+						</button>
+					</h5>
+				</div>
+
+				<div id="checkoutCoupons" class="collapse">
+					<div class="card-body">
+						<div id="wiCheckoutSectionCouponsBox">
+	<div>
+	</div>
+
+		<div class="d-flex">
+			<div class="flex-grow-1">
+<input id="Coupons_Code" name="Coupons_Code" type="text" value="" />				<div class="invalid-feedback">
+					<span class="field-validation-valid" data-valmsg-for="Coupons_Code" data-valmsg-replace="true"></span>
+				</div>
+			</div>
+			<button type="button" class="btn btn-secondary ml-2" id="wiCheckoutCouponsAddCoupon">
+				Add
+			</button>
+		</div>
+
+
+</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="wiCheckoutPartialPromoCode">
+			
+		</div>
+		<div id="wiCheckoutPartialGiftCard">
+					<div class="card">
+			<div class="card-header px-0 py-1">
+				<h5 class="mb-0">
+					<button class="btn btn-block btn-link text-left accordionButton collapsed" type="button" data-toggle="collapse" data-target="#checkoutGiftCard">
+						<div class="d-flex align-items-center">
+							<svg width="16" height="16" class="accordionClosed">
+								<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-right" />
+							</svg>
+							<svg width="16" height="16" class="accordionOpen">
+								<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-down" />
+							</svg>
+							<span>
+								Gift Card
+							</span>
+						</div>
+					</button>
+				</h5>
+			</div>
+
+			<div id="checkoutGiftCard" class="collapse">
+				<div class="card-body">
+						<div class="ui-field-contain">
+		<label for="GiftCard_Number">Card Number:</label>
+		<input id="GiftCard_Number" name="GiftCard_Number" type="text" value="" />
+		<span class="field-validation-valid" data-valmsg-for="GiftCard_Number" data-valmsg-replace="true"></span>
+	</div>
+		<div class="ui-field-contain">
+			<label for="GiftCard_PIN">PIN:</label>
+			<input id="GiftCard_PIN" name="GiftCard_PIN" type="text" value="" />
+		</div>
+<button id="wiCheckoutGiftCardApply" type="button">Apply</button>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		<div id="wiCheckoutPartialSpecialInstructions">
+			
+		</div>
+		<div id="wiCheckoutPartialPayment">
+				<div class="card">
+		<div class="card-header px-0 py-1">
+			<h5 class="mb-0">
+				<button class="btn btn-block btn-link text-left accordionButton" type="button" data-toggle="collapse" data-target="#checkoutPayment">
+					<div class="d-flex align-items-center">
+						<svg width="16" height="16" class="accordionClosed">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-right" />
+						</svg>
+						<svg width="16" height="16" class="accordionOpen">
+							<use xlink:href="/glassnickel/Images/svg/Icons.svg#triangle-down" />
+						</svg>
+						<span>
+							Payment
+						</span>
+					</div>
+				</button>
+			</h5>
+		</div>
+
+		<div id="checkoutPayment" class="collapse show">
+			<div class="card-body">
+				
+
+	<div class="text-center">
+		<div class="btn-group btn-group-toggle w-60" data-toggle="buttons">
+				<label for="wiCheckoutPaymentCreditCard" class="col btn btn-outline-primary ">
+					<input class="wcCheckoutPaymentType" id="wiCheckoutPaymentCreditCard" name="Payment_Type" type="radio" value="CREDITCARD" />
+					Credit Card
+				</label>
+
+				<label for="wiCheckoutPaymentLater" class="col btn btn-outline-primary active">
+					<input checked="checked" class="wcCheckoutPaymentType" id="wiCheckoutPaymentLater" name="Payment_Type" type="radio" value="LATER" />
+					Pay Later
+				</label>
+
+		</div>
+	</div>
+		<div id="wiCheckoutPaymentCreditCardInfo" style="display: none">
+			<div class="d-flex mt-2">
+					<img alt="Amex" src="/glassnickel/Images/amex.gif" />
+									<img alt="Visa" src="/glassnickel/Images/visa.gif" />
+									<img alt="Mastercard" src="/glassnickel/Images/mastercard.gif" />
+									<img alt="Discover" src="/glassnickel/Images/discover.gif" />
+			</div>
+
+
+				<div class="form-group row">
+					<label for="Payment_CCNumber" class="col-4 col-form-label">
+						Card Number:
+					</label>
+					<div class="col-8">
+						<input autocomplete="off" class="form-control" id="Payment_CCNumber" name="Payment_CCNumber" required="required" type="text" value="" />
+						<div class="invalid-feedback">
+							<span class="field-validation-valid" data-valmsg-for="Payment_CCNumber" data-valmsg-replace="true"></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Payment_ExpMonth" class="col-4 col-form-label">
+						Exp. Date:
+					</label>
+					<div class="col-8">
+						<div class="d-flex">
+							<select class="form-control custom-select" data-val="true" data-val-number="The field Payment_ExpMonth must be a number." data-val-required="The Payment_ExpMonth field is required." id="Payment_ExpMonth" name="Payment_ExpMonth"><option selected="selected" value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+							<select class="form-control custom-select" data-val="true" data-val-number="The field Payment_ExpYear must be a number." data-val-required="The Payment_ExpYear field is required." id="Payment_ExpYear" name="Payment_ExpYear"><option selected="selected" value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028</option>
+</select>
+						</div>
+						<div class="invalid-feedback">
+							<span class="field-validation-valid" data-valmsg-for="Payment_ExpMonth" data-valmsg-replace="true"></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Payment_CVV" class="col-4 col-form-label">
+						Security Code:
+					</label>
+					<div class="col-8">
+						<input autocomplete="off" class="form-control" id="Payment_CVV" name="Payment_CVV" required="required" type="text" value="" />
+						<a class="wcCheckoutCVVInfo" href="#">What&#39;s this</a>
+						<div class="invalid-feedback">
+							<span class="field-validation-valid" data-valmsg-for="Payment_CVV" data-valmsg-replace="true"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group row">
+						<label for="Payment_AVSZip" class="col-4 col-form-label">
+							Billing Zip Code:
+						</label>
+						<div class="col-8">
+							<input autocomplete="off" class="form-control" id="Payment_AVSZip" name="Payment_AVSZip" required="required" type="text" value="" />
+							<div class="invalid-feedback">
+								<span class="field-validation-valid" data-valmsg-for="Payment_AVSZip" data-valmsg-replace="true"></span>
+							</div>
+						</div>
+					</div>
+					</div>
+		<div id="wiCheckoutPaymentPayLaterInfo" style="display: none">
+					</div>
+
+			</div>
+		</div>
+	</div>
+
+		</div>
+		</div>
+	<hr class="my-4" />
+	<button type="button" class="btn btn-primary btn-block mt-3" id="wiCheckoutButtonNext">Next</button>
 </form>
+
+
+
+<div class="modal" id="askToJoinLoyalty">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Would you like to join our loyalty program?</h5>
+			</div>
+			<div class="modal-body">
+				Would you like to join our loyalty program? Joining our loyalty program enables you to earn points on every order. You can then redeem your points for special offers or coupons.
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">No Thanks</button>
+				<a href="/glassnickel/Portal/Enroll?op=checkout" class="btn btn-primary">Enroll Now!</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+	function AskToJoinLoyaltyProgram() {
+		$("#askToJoinLoyalty").modal();
+	}
+</script>
+
+
+
+<div class="modal" id="cvvDialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title">Where is my Card ID/PIN?</h5>
+		</div>
+		<div class="modal-body">
+			<div>
+				<h6>Visa, Mastercard, and Discover</h6>
+
+				<div>An important new security feature for card-not present transactions now appears on the back of most visa cards. This new feature is a three-digit value which provides a cryptographic check of the information embossed on the card.</div>
+
+				<div>The CVV2 three-digit value is printed on the signature panel on the back of the cards immediately following the card's account number:</div>
+				<div>
+					<img alt="CVV image" src="/glassnickel/Images/card_cvv2.gif">
+				</div>
+			</div>
+
+			<div>
+				<h6>American Express</h6>
+				The Card Identification # is the 4 digit, non embossed number printed above your account number on the face of your card. This number is recorded as an additional security precaution.
+				<div>
+					<img alt="AMEX CVV image" src="/glassnickel/Images/amex_cvv2.gif">
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+				</div>
+
+			</div>
+		</div>
+		<footer class="container footerContainer">
+			<div class="row">
+				<div class="col-12 text-center">
+					<div style=" width:100%; padding:10px;">
+		<p><strong>Check us out on facebook</strong> &nbsp; &nbsp; <a href="https://www.facebook.com/GlassNickelPizzaEast/
+" target="_blank"> <img src="/glassnickel/custom/images/facebook.png" style="width:50px; height:50px;"/> </a>
+	</p>
+	</div>
+				</div>
+			</div>
+			<div class="row">
+				<div id="poweredByPrismLogo" class="col-12 mt-4 mb-4 mx-auto text-center">
+					<a href="http://www.microworks.com" target="_top">
+							<img alt="Powered by Prism POS Logo" src="/glassnickel/Images/PoweredByPrismPOSLogo.png" border="0" />
+					</a>
+					<br />
+					<a href="http://www.microworks.com" target="_top">
+						Online Ordering<br />
+						by Microworks
+					</a>
+				</div>
+			</div>
+		</footer>
+
+
+	
+
+	
+
+<div class="modal" id="MB">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+			</div>
+
+			<div class="modal-body">
+
+			</div>
+
+			<div class="modal-footer">
+				<button id="mbOK" class="btn btn-primary" data-dismiss="modal">OK</button>
+				<button id="mbYes" class="btn btn-primary" data-dismiss="modal">Yes</button>
+				<button id="mbNo" class="btn btn-primary" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="/glassnickel/bundles/Base-5.0.141.1287?v=YTEdKbu67Z9m-Oxcf87pSgLj30TJmndY_jsF-QP4jq81"></script>
+
+
+<script src="/glassnickel/bundles/CallCenter-5.0.141.1287?v=veF4AUa7hKO52a7psMaf2nfl5mAhEf_ou2Qsobv4b7E1"></script>
+
+
+
+
+		<script>
+				$(document).ready(function () {
+					StartSessionCountdownTimer(20);
+				});
+		</script>
+
+
+<input type="hidden" id="clientWidth" value="1903" />
+<input type="hidden" id="clientHeight" value="937" />
+
+
+
+
+
+	
+	<script>
+		var CHECKOUT_SCREEN__INCOMPLETE_DATA="Incomplete Data";
+
+	</script>
+
+	<script src="/glassnickel/Bundles/checkout-5.0.141.1287?v=oPXMKQImF8YwjJP32qcCL65bMBcmO-CbYGoB2vDQI981"></script>
+
+	<script src="/glassnickel/Bundles/CreditCards-5.0.141.1287?v=35DctWPqv_5dXuuC3T1888bUhkq1MZsbdV4PA8TaI1s1"></script>
+
+	<script src="/glassnickel/Bundles/upsells-5.0.141.1287?v=FvVzNbBA0Z3RoCq4WWZhtd-jB8pyltQDbsG_X0C9Exo1"></script>
+
+
+
+	<script>
+		$(document).ready(function () {
+	   ShowUpsells();
+	});
+	</script>
+
+
+
+
+
+
 </body>
 </html>
